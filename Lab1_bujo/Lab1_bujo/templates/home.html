@@ -1,0 +1,33 @@
+{% extends 'hyperlinks.html' %}
+
+{% block content %}
+
+<title> Your Bujo </title>
+
+<style>
+div {text-align: center;}
+</style>
+	<h1 style="text-align:center; color:white;">space</h1>
+	<h1 style="text-align:center; color:white;">space</h1>
+	<h1 style="text-align:center; color:white;">space</h1>
+	<h1 style="text-align:center; color:white;">space</h1>
+	<h1 style="text-align:center; color:white;">space</h1>
+<center>
+	
+<header> <h1>Your Bullet Journal</h1> </header>
+<body>	
+	<p>Hello! What is your name?</p>
+	
+	{% if name %}
+		Hello, {{name}}! Today is going to be a great day! <br>
+	{% else %}
+		<form action="/home" method = "POST">
+		{% csrf_token %}
+		{{ form }}
+	<input type='submit' name ='Submit'>
+    </form>
+	{% endif %}
+</body>
+</center>
+ {% endblock %}
+
